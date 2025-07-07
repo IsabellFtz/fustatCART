@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Statistische Seite</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            margin: 40px;
+            background-color: white;
+            color: #333;
+        }
+        h2 {
+            font-weight: 600;
+            margin-left: 170px;
+            margin-bottom: 30px;
+            font-size: 30px;
+        }
+        iframe {
+            border: none;
+            width: 80%;
+            height: 600px;
+            display: block;
+            margin: 0 auto 40px auto;  /* zentriert mit Abstand nach unten */
+        }
+        .table-class {
+            border-collapse: collapse;
+            width: 50%;
+            margin-bottom: 20px;
+        }
+        .table-class th, .table-class td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        .table-class th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Deskriptive Statistik</h2>
+    <iframe src="table.html"></iframe>
+
+    <h2>Entscheidungsgrenzen</h2>
+    <iframe src="plot.html"></iframe>
+
+    <h2>Wertebereich des Gini-Index</h2>
+    <div style="width:75%; margin: 0 auto; text-align: justify; font-size: 18px; line-height: 1; margin-bottom: 400px;">
+        <!-- Erster Abschnitt -->
+        <p>
+            Sei \( m \in \mathbb{N} \) ein fest gewählter Knoten mit zugehöriger Klassifizierungsregion \( R_m \). 
+            Ziel ist es, den maximalen Wert des Gini-Index \( Q_m \) basierend auf dem Anteil der \( k \)-ten Klasse \( \hat{p}_{mk} \) in der Region \( R_m \) zu bestimmen. 
+            Maximiere dafür die Funktion
+        </p>
+        <p style="text-align:center;">
+            \[
+            Q_m(\hat{p}_{m1}, \hat{p}_{m2}, \dots, \hat{p}_{mK}) = 1 - \sum_{k=1}^K (\hat{p}_{mk})^2
+            \]
+        </p>
+        <p>
+            unter der Nebenbedingung
+        </p>
+        <p style="text-align:center;">
+            \[
+            \sum_{k=1}^K \hat{p}_{mk} = 1
+            \]
+        </p>
+        <p>
+            mittels der Lagrange-Methode.
+        </p>
+        <p style="text-align:center;">
+            \[
+            \mathcal{L}(\hat{p}_{m1}, \dots, \hat{p}_{mK}, \lambda) = 1 - \sum_{k=1}^K (\hat{p}_{mk})^2 + \lambda \left( \sum_{k=1}^K \hat{p}_{mk} - 1 \right)
+            \]
+        </p>
+        <p>
+            Für jedes \( k = 1, \dots, K \) führt das Nullsetzen der partiellen Ableitungen zu
+        </p>
+        <p style="text-align:center;">
+            \[
+            \frac{\partial \mathcal{L}}{\partial \hat{p}_{mk}} = -2 \hat{p}_{mk} + \lambda = 0 \quad \Rightarrow \quad \hat{p}_{mk} = \frac{\lambda}{2}.
+            \]
+        </p>
+        <p>
+            Da alle \( \hat{p}_{mk} \) gleich sind, setzen wir \( \hat{p}_{mk} = p \) für alle \( k \). Dann ergibt sich:
+        </p>
+        <p style="text-align:center;">
+            \[
+            \sum_{k=1}^K \hat{p}_{mk} = Kp = 1 \quad \Rightarrow \quad p = \frac{1}{K}
+            \]
+        </p>
+        <p>
+            Einsetzen in die Zielfunktion liefert
+        </p>
+        <p style="text-align:center;">
+            \[
+            Q_m \leq 1 - \sum_{k=1}^K \left(\frac{1}{K}\right)^2 = 1 - K \cdot \frac{1}{K^2} = 1 - \frac{1}{K}
+            \]
+        </p>
+        <p>
+            Die Funktion wird also genau dann maximiert, wenn die Anteile der Klassen in dem Knoten \( m \) gleichverteilt sind.
+        </p>
+
+    </div>
+
+    <h2>Wertebereich der Entropie</h2>
+    <div style="width:75%; margin: 0 auto; text-align: justify; font-size: 18px; line-height: 1;">
+        <p>
+            Sei \( m \in \mathbb{N} \) ein fest gewählter Knoten mit zugehöriger Klassifizierungsregion \( R_m \). Ziel ist es, den maximalen Wert der Entropie-Funktion \( Q_m \) basierend auf dem Anteil der \( k \)-ten Klasse \( \hat{p}_{mk} \) in der Region \( R_m \) zu bestimmen.
+            Maximiere dafür die Funktion
+        </p>
+        <p style="text-align:center;">
+            \[
+            Q_m(\hat{p}_{m1}, \hat{p}_{m2}, \dots, \hat{p}_{mK}) = - \sum_{k=1}^K \hat{p}_{mk} \log (\hat{p}_{mk})
+            \]
+        </p>
+        <p>
+            unter der Nebenbedingung
+        </p>
+        <p style="text-align:center;">
+            \[
+            \sum_{k=1}^K \hat{p}_{mk} = 1
+            \]
+        </p>
+        <p>
+            mittels der Lagrange-Methode.
+        </p>
+        <p style="text-align:center;">
+            \[
+            \mathcal{L}(\hat{p}_{m1}, \dots, \hat{p}_{mK}, \lambda) = - \sum_{k=1}^K \hat{p}_{mk} \log(\hat{p}_{mk}) + \lambda \left( \sum_{k=1}^K \hat{p}_{mk} - 1 \right)
+            \]
+        </p>
+        <p>
+            Für jedes \( k = 1, \dots, K \) ergibt das Nullsetzen der partiellen Ableitungen:
+        </p>
+        <p style="text-align:center;">
+            \[
+            \frac{\partial \mathcal{L}}{\partial \hat{p}_{mk}} = -\left( \log(\hat{p}_{mk}) + 1 \right) + \lambda = 0
+            \quad \Rightarrow \quad
+            \log(\hat{p}_{mk}) = \lambda - 1
+            \quad \Rightarrow \quad
+            \hat{p}_{mk} = e^{\lambda - 1}
+            \]
+        </p>
+        <p>
+            Da alle \( \hat{p}_{mk} \) gleich sind, setzen wir \( \hat{p}_{mk} = p \) für alle \( k \). Dann ergibt sich:
+        </p>
+        <p style="text-align:center;">
+            \[
+            \sum_{k=1}^K \hat{p}_{mk} = Kp = 1 \quad \Rightarrow \quad p = \frac{1}{K}
+            \]
+        </p>
+        <p>
+            Einsetzen in die Zielfunktion liefert:
+        </p>
+        <p style="text-align:center;">
+            \[
+            Q_m \leq - \sum_{k=1}^K \frac{1}{K} \log\left( \frac{1}{K} \right)
+            = - K \cdot \frac{1}{K} \log\left( \frac{1}{K} \right)
+            = \log(K)
+            \]
+        </p>
+        <p>
+            Die Entropie wird also genau dann maximiert, wenn die Anteile der Klassen in dem Knoten \( m \) gleichverteilt sind.
+        </p>
+
+    </div>
+
+
+</body>
+</html>
