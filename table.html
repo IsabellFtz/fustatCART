@@ -1,0 +1,433 @@
+
+<html>
+<head>
+<meta charset="UTF-8">
+    <style>
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            margin: 40px;
+            background-color: white;
+            color: #333;
+        }
+        h2 {
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        .custom-select {
+            position: relative;
+            width: 220px;
+            user-select: none;
+        }
+        select {
+            width: 100%;
+            padding: 10px 15px;
+            border: 2px solid #4a90e2;
+            border-radius: 8px;
+            background-color: white;
+            font-size: 16px;
+            font-weight: 600;
+            color: #4a4a4a;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            cursor: pointer;
+            transition: border-color 0.3s ease;
+        }
+        select:hover, select:focus {
+            border-color: #357ABD;
+            outline: none;
+            box-shadow: 0 0 6px rgba(53, 122, 189, 0.5);
+        }
+        .custom-select::after {
+            content: "▼";
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+            color: #4a90e2;
+            font-size: 12px;
+            font-weight: 700;
+        }
+        .table {
+            border-collapse: collapse;
+            width: 100%;
+            background-color: white;
+            box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .table th, .table td {
+            border: 1px solid #ddd;
+            padding: 10px 12px;
+            text-align: right;
+            font-size: 14px;
+        }
+        .table th {
+            background-color: #f2f2f2;
+            font-weight: 600;
+            text-align: left;
+        }
+        .table td:first-child {
+            text-align: left;
+            font-weight: 500;
+            color: #222;
+            width: 200px;
+        }
+    </style>
+    <script>
+        function showTable() {
+            var selectBox = document.getElementById("dataset-select");
+            var selectedValue = selectBox.value;
+            document.getElementById("full").style.display = "none";
+            document.getElementById("train").style.display = "none";
+            document.getElementById("test").style.display = "none";
+            document.getElementById(selectedValue).style.display = "block";
+        }
+        window.onload = function() {
+            showTable();
+        };
+    </script>
+</head>
+<body>
+    <h2></h2>
+    <div class="custom-select">
+        <select id="dataset-select" onchange="showTable()">
+            <option value="full">Gesamt Datensatz</option>
+            <option value="train">Trainings Datensatz</option>
+            <option value="test">Test Datensatz</option>
+        </select>
+    </div>
+    <br><br>
+    <div id="full"><table border="1" class="dataframe table table-striped">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Feature</th>
+      <th>Mittelwert</th>
+      <th>Std. Abw.</th>
+      <th>Minimum</th>
+      <th>10% Quantil</th>
+      <th>25% Quantil</th>
+      <th>Median</th>
+      <th>75% Quantil</th>
+      <th>90% Quantil</th>
+      <th>Maximum</th>
+      <th>Anzahl</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Ballbesitz</td>
+      <td>49.62</td>
+      <td>6.92</td>
+      <td>6.0</td>
+      <td>43.0</td>
+      <td>46.0</td>
+      <td>50.0</td>
+      <td>53.5</td>
+      <td>57.0</td>
+      <td>62.0</td>
+      <td>87</td>
+    </tr>
+    <tr>
+      <td>Zweikampf</td>
+      <td>102.60</td>
+      <td>6.73</td>
+      <td>87.0</td>
+      <td>93.6</td>
+      <td>97.5</td>
+      <td>103.0</td>
+      <td>108.0</td>
+      <td>112.0</td>
+      <td>115.0</td>
+      <td>87</td>
+    </tr>
+    <tr>
+      <td>Passquote</td>
+      <td>82.16</td>
+      <td>3.77</td>
+      <td>73.0</td>
+      <td>77.6</td>
+      <td>80.0</td>
+      <td>82.0</td>
+      <td>85.0</td>
+      <td>87.0</td>
+      <td>90.0</td>
+      <td>87</td>
+    </tr>
+    <tr>
+      <td>Fouls</td>
+      <td>382.97</td>
+      <td>50.40</td>
+      <td>289.0</td>
+      <td>310.6</td>
+      <td>348.5</td>
+      <td>390.0</td>
+      <td>415.0</td>
+      <td>446.4</td>
+      <td>507.0</td>
+      <td>87</td>
+    </tr>
+    <tr>
+      <td>Trainerwechsel</td>
+      <td>0.44</td>
+      <td>0.50</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>87</td>
+    </tr>
+    <tr>
+      <td>Titel</td>
+      <td>0.16</td>
+      <td>0.48</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>3.0</td>
+      <td>87</td>
+    </tr>
+    <tr>
+      <td>CL</td>
+      <td>0.24</td>
+      <td>0.43</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>87</td>
+    </tr>
+  </tbody>
+</table></div>
+    <div id="train" style="display:none;"><table border="1" class="dataframe table table-striped">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Feature</th>
+      <th>Mittelwert</th>
+      <th>Std. Abw.</th>
+      <th>Minimum</th>
+      <th>10% Quantil</th>
+      <th>25% Quantil</th>
+      <th>Median</th>
+      <th>75% Quantil</th>
+      <th>90% Quantil</th>
+      <th>Maximum</th>
+      <th>Anzahl</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Ballbesitz</td>
+      <td>49.50</td>
+      <td>7.54</td>
+      <td>6.0</td>
+      <td>43.0</td>
+      <td>45.75</td>
+      <td>50.0</td>
+      <td>54.00</td>
+      <td>57.0</td>
+      <td>62.0</td>
+      <td>68</td>
+    </tr>
+    <tr>
+      <td>Zweikampf</td>
+      <td>102.81</td>
+      <td>6.81</td>
+      <td>87.0</td>
+      <td>93.7</td>
+      <td>97.75</td>
+      <td>104.0</td>
+      <td>108.00</td>
+      <td>112.0</td>
+      <td>115.0</td>
+      <td>68</td>
+    </tr>
+    <tr>
+      <td>Passquote</td>
+      <td>81.97</td>
+      <td>3.99</td>
+      <td>73.0</td>
+      <td>77.0</td>
+      <td>79.00</td>
+      <td>82.0</td>
+      <td>85.00</td>
+      <td>87.0</td>
+      <td>90.0</td>
+      <td>68</td>
+    </tr>
+    <tr>
+      <td>Fouls</td>
+      <td>386.31</td>
+      <td>52.69</td>
+      <td>289.0</td>
+      <td>310.7</td>
+      <td>348.00</td>
+      <td>393.5</td>
+      <td>420.25</td>
+      <td>453.3</td>
+      <td>507.0</td>
+      <td>68</td>
+    </tr>
+    <tr>
+      <td>Trainerwechsel</td>
+      <td>0.46</td>
+      <td>0.50</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>1.00</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>68</td>
+    </tr>
+    <tr>
+      <td>Titel</td>
+      <td>0.19</td>
+      <td>0.53</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.00</td>
+      <td>1.0</td>
+      <td>3.0</td>
+      <td>68</td>
+    </tr>
+    <tr>
+      <td>CL</td>
+      <td>0.24</td>
+      <td>0.43</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.00</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>68</td>
+    </tr>
+  </tbody>
+</table></div>
+    <div id="test" style="display:none;"><table border="1" class="dataframe table table-striped">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Feature</th>
+      <th>Mittelwert</th>
+      <th>Std. Abw.</th>
+      <th>Minimum</th>
+      <th>10% Quantil</th>
+      <th>25% Quantil</th>
+      <th>Median</th>
+      <th>75% Quantil</th>
+      <th>90% Quantil</th>
+      <th>Maximum</th>
+      <th>Anzahl</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Ballbesitz</td>
+      <td>50.05</td>
+      <td>4.14</td>
+      <td>43.0</td>
+      <td>46.0</td>
+      <td>47.0</td>
+      <td>49.0</td>
+      <td>52.5</td>
+      <td>56.0</td>
+      <td>59.0</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <td>Zweikampf</td>
+      <td>101.84</td>
+      <td>6.58</td>
+      <td>89.0</td>
+      <td>95.0</td>
+      <td>97.5</td>
+      <td>102.0</td>
+      <td>107.0</td>
+      <td>109.2</td>
+      <td>114.0</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <td>Passquote</td>
+      <td>82.84</td>
+      <td>2.81</td>
+      <td>78.0</td>
+      <td>80.0</td>
+      <td>80.5</td>
+      <td>83.0</td>
+      <td>84.0</td>
+      <td>86.0</td>
+      <td>90.0</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <td>Fouls</td>
+      <td>371.00</td>
+      <td>40.07</td>
+      <td>294.0</td>
+      <td>320.4</td>
+      <td>350.0</td>
+      <td>372.0</td>
+      <td>396.0</td>
+      <td>415.2</td>
+      <td>447.0</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <td>Trainerwechsel</td>
+      <td>0.37</td>
+      <td>0.50</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <td>Titel</td>
+      <td>0.05</td>
+      <td>0.23</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <td>CL</td>
+      <td>0.26</td>
+      <td>0.45</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.5</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>19</td>
+    </tr>
+  </tbody>
+</table></div>
+</body>
+</html>
