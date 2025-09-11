@@ -4,7 +4,7 @@ This repository contains the supplementary material for a project on Classificat
 
 ## Repository Contents
 
-- **CART Visualizations:** Code for all visualizations included in the corresponding fu:stat website article.  
+- **Website Figures:** Code for all visualizations included in the corresponding fu:stat website article.  
 - **Auxiliary Website:** HTML website supporting the presentation of the article.  
 - **Replication Code:** Code implementations replicating the results of the accompanying paper.
 
