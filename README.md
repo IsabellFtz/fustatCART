@@ -4,9 +4,9 @@ This repository contains the supplementary material for a project on Classificat
 
 ## Repository Contents
 
-- **CART Visualizations:** Code for all visualizations, as included in the corresponding website article.  
-- **Auxiliary Website:** Supporting html.website used for presenting the website article. 
-- **Replication Code:** All code implementations replicating the results of the accompanying paper.  
+- **CART Visualizations:** Code for all visualizations included in the corresponding website article.  
+- **Auxiliary Website:** HTML website supporting the presentation of the article.  
+- **Replication Code:** Code implementations replicating the results of the accompanying paper.
 
 ## Getting Started
 Instructions on how to run the code or view the website:
