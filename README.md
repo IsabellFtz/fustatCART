@@ -4,11 +4,11 @@ This repository provides supplementary material for a project on Classification 
 
 ## Repository Contents
 - **Auxiliary Website:** HTML website supporting the presentation of the fu:stat webpage entry  
-  - `generate3dplot.py` and `generateHTMLTable.py` use the files in the `data/` folder and can each be run individually.  
-    - Outputs: `plot.html` and `table.html`  
+  - `generate3dplot.py` uses the files in the `data/` folder and produces `plot.html` 
+  - `generateHTMLTable.py` uses the files in the `data/` folder and produces `table.html` 
   - `main.html` serves as the main HTML frame for the auxiliary website and integrates `plot.html` and `table.html`.  
 - **Data:** Dataset on performance parameters of all clubs in the 1st Bundesliga, used for replication and visualization of CART models  
-  - `bundesliga_dataset.csv`  
+  - `bundesliga_dataset.csv` 
   - `data_trainF3.csv` (generated during preprocessing)  
 - **Paper:** Code implementations replicating the results of the our accompanying scientific paper, including output files  
   - `replication_paper.R` is executed by `master.R` and produces all paper-related output files.  
