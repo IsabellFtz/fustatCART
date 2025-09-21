@@ -4,6 +4,7 @@ This repository contains the supplementary material for a project on Classificat
 The project comprises the creation of a webpage entry introducing the topic at a level suitable for end-of-bachelor students who wish to learn more about classical machine learning models, as well as a more in-depth paper on the mathematical theory behind Classification Trees and their application to a self-chosen dataset on football performance measures of all clubs in the German 1st Bundesliga for the seasons 2019/2020–2024/25. We use CART models to estimate a decision rule for predicting whether a club qualifies for the UEFA Champions League based on its performance measures from the previous season. The corresponding fu:stat website article is yet to be published (as of September 2025).
 
 
+
 ## Repository Contents
 - **Auxiliary Website:** HTML website supporting the presentation of the fu:stat webpage entry  
   - `generate3dplot.py` and `generateHTMLTable.py` use the files in the `data/` folder and can each be run individually.  
@@ -20,6 +21,7 @@ The project comprises the creation of a webpage entry introducing the topic at a
   - cleans and preprocesses the data.  
   - generates the `data_trainF3.csv` dataset.  
   - executes both `replication_paper.R` and `replication_webentry.R`.  
+
 
 ## How to run ...
 1) Download the repository by clicking on the green *Code* button and selecting *Download ZIP*. Unzip the folder and choose a location on your computer.  
@@ -42,7 +44,11 @@ The project comprises the creation of a webpage entry introducing the topic at a
 7) Open `generate3dplot.py` in VS Code (or another IDE) and run the script.  
    - This generates `auxiliary-website/plot.html`.  
 8) Open `generateHTMLTable.py` and run the script.  
-   - This generates `auxiliary-website/table.html`.  
+   - This generates `auxiliary-website/table.html`.
+
+
+## Required Software
+**R version 4.3.0** and **Python 3.10.8**
 
 
 
