@@ -1,0 +1,15 @@
+Confusion matrix: unpruned CART  with two features
+          True
+Predicted  CL Nicht-CL
+  CL        3        2
+  Nicht-CL  2       12
+
+Accuracy (unpruned): 0.7894737 
+
+Confusion matrix: pruned CART with two features and stopping criterion (maxdepth =4)
+          True
+Predicted  CL Nicht-CL
+  CL        3        1
+  Nicht-CL  2       13
+
+Accuracy (pruned): 0.8421053 
