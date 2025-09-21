@@ -30,13 +30,13 @@ This repository provides supplementary material for a project on Classification 
 3) Open `master.R` in RStudio (or another R environment).  
    - Expand the document outline by clicking the symbol with grey lines next to the *Source* button in RStudio, or use the shortcut **SHIFT+ALT+O** (Mac: **SHIFT+COMMAND+O**).  
 4) Read the notes in the *Credits* section and check your R version.  
-   - In Section A of `master.R`, set the working directory (line 34) to the downloaded `fustatCART` folder.  
+   - In Section A of `master.R`, set the working directory (line 34) to the downloaded `fustatCART-main` folder.  
    - For help with setting the working directory, we recommend [Nathaniel D. Phillips' guidelines](https://bookdown.org/ndphillips/YaRrr/the-working-directory.html).  
 5) Run Sections B–D of `master.R`.  
    - Please follow the comments for further assistance.  
    - Generated outputs will be stored in `paper/output/` and `webentry/output/`.  
 ### ... the Python code
-6) Set up your Python environment in the `fustatCART` directory and check your Python version.
+6) Set up your Python environment in the `fustatCART-main` directory and check your Python version.
    - For help with environment setup, we suggest consulting guidelines such as [Python Virtual Environments](https://docs.python.org/3/library/venv.html).  
 7) Open `generate3dplot.py` in VS Code (or another IDE) and run the script.  
    - This generates `auxiliary-website/plot.html`.  
