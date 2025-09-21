@@ -1,6 +1,8 @@
 # CART Visualizations and Replication
 
-This repository contains the supplementary material for a project on Classification Trees. The project comprises the creation of a webpage entry introducing the topic at a level suitable for end-of-bachelor students who wish to learn more about classical machine learning models, as well as a more in-depth paper on the mathematical theory behind Classification Trees and their application to a self-chosen dataset. The corresponding fu:stat website article is yet to be published (as of September 2025).
+This repository contains the supplementary material for a project on Classification Trees.  
+The project comprises the creation of a webpage entry introducing the topic at a level suitable for end-of-bachelor students who wish to learn more about classical machine learning models, as well as a more in-depth paper on the mathematical theory behind Classification Trees and their application to a self-chosen dataset on football performance measures of all clubs in the German 1st Bundesliga for the seasons 2019/2020–2024/25. We use CART models to estimate a decision rule for predicting whether a club qualifies for the UEFA Champions League based on its performance measures from the previous season. The corresponding fu:stat website article is yet to be published (as of September 2025).
+
 
 ## Repository Contents
 - **Auxiliary Website:** HTML website supporting the presentation of the fu:stat webpage entry  
@@ -19,9 +21,29 @@ This repository contains the supplementary material for a project on Classificat
   - generates the `data_trainF3.csv` dataset.  
   - executes both `replication_paper.R` and `replication_webentry.R`.  
 
+## How to run ...
+1) Download the repository by clicking on the green *Code* button and selecting *Download ZIP*. Unzip the folder and choose a location on your computer.  
+2) The folders `webentry/` and `paper/` each contain a subfolder called `output/` with pre-rendered output files.  
+   - Readers may delete these subfolders and re-run the code to regenerate all outputs.  
+   - The same applies to the dataset `data_trainF3.csv`, which is generated during preprocessing but already provided for users with time constraints.  
+   - Likewise, the files `auxiliary-website/table.html` and `auxiliary-website/plot.html` are pre-generated but can also be recreated by running the Python scripts.  
+### ... the R code
+3) Open `master.R` in RStudio (or another R environment).  
+   - Expand the document outline by clicking the symbol with grey lines next to the *Source* button in RStudio, or use the shortcut **SHIFT+ALT+O** (Mac: **SHIFT+COMMAND+O**).  
+4) Read the notes in the *Credits* section and check your R version.  
+   - In Section A of `master.R`, set the working directory (line 34) to the downloaded `fustatCART` folder.  
+   - For help with setting the working directory, we recommend [Nathaniel D. Phillips' guidelines](https://bookdown.org/ndphillips/YaRrr/the-working-directory.html).  
+5) Run Sections B–D of `master.R`.  
+   - Please follow the comments for further assistance.  
+   - Generated outputs will be stored in `paper/output/` and `webentry/output/`.  
+### ... the Python code
+6) Set up your Python environment in the `fustatCART` directory and check your Python version.
+   - For help with environment setup, we suggest consulting guidelines such as [Python Virtual Environments](https://docs.python.org/3/library/venv.html).  
+7) Open `generate3dplot.py` in VS Code (or another IDE) and run the script.  
+   - This generates `auxiliary-website/plot.html`.  
+8) Open `generateHTMLTable.py` and run the script.  
+   - This generates `auxiliary-website/table.html`.  
 
-## Getting Started
-Instructions on how to run the code or view the website:
 
 
   
