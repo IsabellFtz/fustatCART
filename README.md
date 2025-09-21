@@ -48,7 +48,7 @@ The project comprises the creation of a webpage entry introducing the topic at a
 
 
 ## Required Software
-**R version 4.3.0** and **Python 3.10.8**
+R (version ≥ 4.3.0) and Python (version ≥ 3.10.8)  
 
 
 
