@@ -1,2 +1,0 @@
-The HTML files for the auxiliary website are stored here. 
-The website is accessible at https://isabellftz.github.io/fustatCART/auxiliary-website/main.html.
