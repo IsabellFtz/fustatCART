@@ -1,7 +1,10 @@
 # CART Visualizations and Replication
-
-This repository contains the supplementary material for a project on Classification Trees.  
-The project comprises the creation of a webpage entry introducing the topic at a level suitable for end-of-bachelor students who wish to learn more about classical machine learning models, as well as a more in-depth paper on the mathematical theory behind Classification Trees and their application to a self-chosen dataset on football performance measures of all clubs in the German 1st Bundesliga for the seasons 2019/2020–2024/25. We use CART models to estimate a decision rule for predicting whether a club qualifies for the UEFA Champions League based on its performance measures from the previous season. The corresponding fu:stat website article is yet to be published (as of September 2025).
+This repository provides supplementary material for a project on Classification Trees.  
+The project includes two components:  
+1. A webpage entry introducing the topic at a level suitable for end-of-bachelor students interested in classical machine learning models.  
+2. A scientific paper offering a deeper discussion of the mathematical theory behind Classification Trees and their application to a dataset on football performance measures of all clubs in the German 1st Bundesliga (seasons 2019/2020–2024/25).  
+Using CART models, we estimate a decision rule to predict whether a club qualifies for the UEFA Champions League based on its performance in the previous season.  
+The corresponding fu:stat website article is expected to be published at a later date (as of September 2025).  
 
 
 
