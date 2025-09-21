@@ -15,9 +15,9 @@ This repository contains the supplementary material for a project on Classificat
 - **Webentry:** Code implementations replicating all visualizations included in the fu:stat webpage entry, including output files  
   - `replication_webentry.R` is executed by `master.R` and produces all webentry-related output files.  
 - **master.R:** The main R script to run the analyses.  
-  - Cleans and preprocesses the data.  
-  - Generates the `data_trainF3.csv` dataset.  
-  - Executes both `replication_paper.R` and `replication_webentry.R`.  
+  - cleans and preprocesses the data.  
+  - generates the `data_trainF3.csv` dataset.  
+  - executes both `replication_paper.R` and `replication_webentry.R`.  
 
 
 ## Getting Started
