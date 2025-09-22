@@ -10,7 +10,7 @@ This repository provides supplementary material for a project on Classification 
 - **Data:** Dataset on performance parameters of all clubs in the 1st Bundesliga, used for replication and visualization of CART models  
   - `bundesliga_dataset.csv` 
   - `data_trainF3.csv` (generated during preprocessing)  
-- **Paper:** Code implementations replicating the results of the our accompanying scientific paper, including output files  
+- **Paper:** Code implementations replicating the results of our accompanying scientific paper, including output files  
   - `replication_paper.R` is executed by `master.R` and produces all paper-related output files.  
 - **Webentry:** Code implementations replicating all visualizations included in the fu:stat webpage entry, including output files  
   - `replication_webentry.R` is executed by `master.R` and produces all webentry-related output files.  
