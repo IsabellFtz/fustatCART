@@ -2,7 +2,7 @@
 '
 Autorinnen:         Isabell & Laura 
 Erstelldatum:       06.06.2025    
-Letztes Update:     21.09.2025
+Letztes Update:     22.09.2025
 Zweck:              Dieses Master-Skript steuert die gesamte Analyse und Replikation.
                     Es lädt zwei separate Skripte ein:
                     (1) "replication_website.R" für die 
