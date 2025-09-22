@@ -124,7 +124,7 @@ write.csv(data_trainF3, paste0("data/data_trainF3.csv"), row.names = FALSE)
 source(file.path(path_paper, "replication_paper.R"))
 
 ## 2) for fu:stat webentry --------------------------------
-# load in replication_paper.R and check folder paper/output
+# load in replication_webentry.R and check folder webentry/output
 source(file = file.path(path_webentry, "replication_webentry.R")) 
 
 
